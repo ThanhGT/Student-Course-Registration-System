@@ -1,0 +1,60 @@
+﻿@model Tran_991515427_LABS.Models.StudentResponse
+
+@{
+    Layout = null;
+}
+
+@*displays student form*@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/bootstrap-multiselect/css/bootstrap-multiselect.css" />
+
+    <title>Student Form</title>
+</head>
+
+<body class="text-center p-2">
+    <h5 class="bg-primary text-white text-center m-2 p-2">
+        Welcome to Student Form
+    </h5>
+
+    <div>
+        Welcome to Student Form
+    </div>
+
+    <form asp-action="StudentForm" method="post" runat="server">
+        <div asp-validation-summary="All"></div>
+        <div class="form-group">
+            <label asp-for="FirstName">First Name:</label>
+            <input asp-for="FirstName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="LastName">Last Name:</label>
+            <input asp-for="LastName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="StudentNumber">Student Number:</label>
+            <input asp-for="StudentNumber" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Enrolled Courses:</label>
+            <select asp-for="Courses" multiple="multiple" class="form-control">
+                <option value ="1">Software Process Management"</option>
+                <option value ="2">Capstone Prototype"</option>
+                <option value ="3">Advanced Java Frameworks"</option>
+                <option value ="4">Advanced .NET Server-Side Technologies"</option>
+                <option value ="5">"3D Game Programming Foundations"</option>
+                <option value ="6">"Game Engineering Principles"</option>
+                <option value ="7">"Android Application Development"</option>
+                <option value ="8">"Mobile iOS Application Development"</option>
+                <option value ="9">"Innovation: From Idea to Execution"</option>
+            </select>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

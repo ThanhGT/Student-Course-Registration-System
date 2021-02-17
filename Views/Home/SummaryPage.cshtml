@@ -1,0 +1,29 @@
+﻿@model Tran_991515427_LABS.Models.StudentResponse
+{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <title>Enrolled Courses</title>
+</head>
+
+<body class="text-center p-2">
+    <h1>@Model.FirstName @Model.LastName</h1>
+
+    @if (Model.Courses == true)
+    {
+        @:It is great that you are coming, for more information on the party stay tuned!
+    }
+    else
+    {
+        @:Sorry to know that you can't make to the party, we will miss you.
+    }
+
+    <a asp-action="ListResponses" class="nav-link">Click Here to see who is coming. </a>
+
+</body>
+</html>

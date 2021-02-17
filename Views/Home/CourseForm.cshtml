@@ -1,0 +1,72 @@
+﻿@model Tran_991515427_LABS.Models.CourseResponse
+
+@{
+    Layout = null;
+}
+
+@*displays courses form*@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <title>Courses Form</title>
+</head>
+
+<body class="text-center p-2">
+    <h5 class="bg-primary text-white text-center m-2 p-2">
+        Welcome to Courses Form
+    </h5>
+
+    <div>
+        Welcome to Courses Form
+    </div>
+
+    <form asp-action="CourseForm" method="post">
+        <div asp-validation-summary="All"></div>
+        <div class="form-group">
+            <label asp-for="CourseCode">Course Code:</label>
+            <input asp-for="CourseCode" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="NumberOfCredits">NumberOfCredits:</label>
+            <input asp-for="NumberOfCredits" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Enrolled Courses: </label>
+            <select asp-for="CourseName" class="form-control">
+                <option value="">Choose an Option</option>
+                <option value="true">Capstone Prototype</option>
+                <option value="true">Software Process Management</option>
+                <option value="true">Advanced Java Frameworks</option>
+                <option value="true">Advanced .NET Server-Side Technologies</option>
+                <option value="true">3D Game Programming Foundations</option>
+                <option value="true">Game Engineering Principles</option>
+                <option value="true">Android Application Development</option>
+                <option value="true">Mobile iOS Application Development</option>
+                <option value="true">Innovation: From Idea to Execution</option>
+            </select>
+        </div>
+            <div class="form-group">
+                <label>Enrolled Students: </label>
+                @*TODO: dynamically generate students from student form as students are being registered*@
+                <select asp-for="EnrolledStudents" class="form-control">
+                    <option value="">Choose an Option</option>
+                    <option value="true">Capstone Prototype</option>
+                    <option value="true">Software Process Management</option>
+                    <option value="true">Advanced Java Frameworks</option>
+                    <option value="true">Advanced .NET Server-Side Technologies</option>
+                    <option value="true">3D Game Programming Foundations</option>
+                    <option value="true">Game Engineering Principles</option>
+                    <option value="true">Android Application Development</option>
+                    <option value="true">Mobile iOS Application Development</option>
+                    <option value="true">Innovation: From Idea to Execution</option>
+                </select>
+            </div>
+
+            <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
