@@ -1,0 +1,15 @@
+﻿.field-validation-error{color:orangered}
+.field-validation-valid{display:none}
+
+.input-validation-error
+{
+    border:1px solid rgba(0, 0, 0, 1.00); 
+    background-color: #ff6a00;
+
+}
+
+.validation-summary-errors
+{
+    font-weight:bold;
+    color:deeppink;
+}

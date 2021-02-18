@@ -5,6 +5,18 @@
     {
       "library": "bootstrap-multiselect@0.9.16",
       "destination": "wwwroot/bootstrap-multiselect/"
+    },
+    {
+      "library": "jquery@3.5.1",
+      "destination": "wwwroot/lib/jquery/"
+    },
+    {
+      "library": "twitter-bootstrap@4.6.0",
+      "destination": "wwwroot/lib/twitter-bootstrap/"
+    },
+    {
+      "library": "popper.js@2.7.0",
+      "destination": "wwwroot/lib/popper.js/"
     }
   ]
 }
