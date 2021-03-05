@@ -1,0 +1,27 @@
+﻿@model Tran_991515427_LABS.Models.StudentResponse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <title>Registration</title>
+</head>
+
+<body class="text-center p-2">
+    <h1>Welcome @Model.FirstName @Model.LastName</h1>
+
+   @* TODO: Register students for what was selected in the drop-down
+    TODO: Allow students to drop selected courses
+    TODO: display on summary page of course name, course code and student name*@
+    
+
+
+    <a asp-action="ListResponses" class="nav-link">Click Here to see who is coming. </a>
+
+</body>
+</html>

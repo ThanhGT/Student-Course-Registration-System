@@ -1,0 +1,21 @@
+﻿@model Tran_991515427_LABS.Models.StudentResponse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <title>Thank you, you have successfully</title>
+</head>
+
+<body class="text-center">
+
+    <h1>Thank you, @Model.FirstName @Model.LastName; Student Number: @Model.StudentNumber has been sucessfully registered.</h1>
+    <a asp-action="SummaryPage" class="nav-link">Click here to see the list of all Courses and Students.</a>
+
+</body>
+</html>

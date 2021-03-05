@@ -1,10 +1,13 @@
-﻿@model Tran_991515427_LABS.Models.StudentResponse
+﻿@* FileName: StudentForm.cshtml
+    Author: Thanh Tran
+    Description: Web view for the Student Registration Form
+*@
+
+@model Tran_991515427_LABS.Models.StudentResponse
 
 @{
     Layout = null;
 }
-
-@*displays student form*@
 
 <!DOCTYPE html>
 <html>
@@ -34,44 +37,43 @@
 
 </head>
 
-    <body class="text-center p-2">
-        <h5 class="bg-primary text-white text-center m-2 p-2">
-            Welcome to Student Form
-        </h5>
+<body class="text-center p-2">
+    <h5 class="bg-primary text-white text-center m-2 p-2">
+        Welcome to Student Form
+    </h5>
 
-        <div>
-            Welcome to Student Form
+    <form asp-action="StudentForm" method="post" runat="server">
+        <div asp-validation-summary="All"></div>
+        <div class="form-group">
+            <label asp-for="FirstName">First Name:</label>
+            <input asp-for="FirstName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="LastName">Last Name:</label>
+            <input asp-for="LastName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="StudentNumber">Student Number:</label>
+            <input asp-for="StudentNumber" class="form-control" />
         </div>
 
-        <form asp-action="StudentForm" method="post" runat="server">
-            <div asp-validation-summary="All"></div>
-            <div class="form-group">
-                <label asp-for="FirstName">First Name:</label>
-                <input asp-for="FirstName" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="LastName">Last Name:</label>
-                <input asp-for="LastName" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="StudentNumber">Student Number:</label>
-                <input asp-for="StudentNumber" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label>Enrolled Courses:</label>
-                <select asp-for="Courses" id="courses" class="form-control" multiple="multiple">
-                    <option value ="1">Software Process Management</option>
-                    <option value ="2">Capstone Prototype</option>
-                    <option value ="3">Advanced Java Frameworks</option>
-                    <option value ="4">Advanced .NET Server-Side Technologies</option>
-                    <option value ="5">3D Game Programming Foundations</option>
-                    <option value ="6">Game Engineering Principles</option>
-                    <option value ="7">Android Application Development</option>
-                    <option value ="8">Mobile iOS Application Development</option>
-                    <option value ="9">Innovation: From Idea to Execution</option>
-                </select>
-            </div>
-            <button type="submit">Submit</button>
-        </form>
-    </body>
-    </html>
+        <!-- TODO: Use the Course Repo and have it fill the option-value here instead of hard-coding it... -->
+        <div class="form-group">
+            <label>Enrolled Courses:</label>
+            <select asp-for="Courses" id="courses" class="form-control" multiple="multiple">
+                <option value="Software Process Management">Software Process Management</option>
+                <option value="Capstone Prototype">Capstone Prototype</option>
+                <option value="Advanced Java Frameworks">Advanced Java Frameworks</option>
+                <option value="Advanced .NET Server-Side Technologies">Advanced .NET Server-Side Technologies</option>
+                <option value="3D Game Programming Foundations">3D Game Programming Foundations</option>
+                <option value="Game Engineering Principles">Game Engineering Principles</option>
+                <option value="Android Application Development">Android Application Development</option>
+                <option value="Mobile iOS Application Development">Mobile iOS Application Development</option>
+                <option value="Innovation: From Idea to Execution">Innovation: From Idea to Execution</option>
+            </select>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

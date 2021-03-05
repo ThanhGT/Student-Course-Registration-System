@@ -1,29 +1,48 @@
-﻿@model Tran_991515427_LABS.Models.StudentResponse
-{
+﻿@model IEnumerable<Tran_991515427_LABS.Models.CourseResponse>
+@{
     Layout = null;
 }
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-    <title>Enrolled Courses</title>
+    <title>List of Courses and Students</title>
 </head>
 
 <body class="text-center p-2">
-    <h1>@Model.FirstName @Model.LastName</h1>
+    <h2>Here are the list of courses and the students enrolled in them</h2>
+    <table class="table table-sm table-striped table-bordered">
+        <thread>
+            <tr>
+                <th>Course Name:</th>
+                <th>Course Code:</th>
+                <th>Number of Credits:</th>
+                <th>Students Enrolled:</th>
+            </tr>
+        </thread>
+        <tbody>
+            <!--Iterate over each Course in the model and display the following fields -->
+            @foreach (Tran_991515427_LABS.Models.CourseResponse course in Model)
+            {
+            <tr>
+                <td> @course.CourseName  </td>
+                <td> @course.CourseCode  </td>
+                <td> @course.NumberOfCredits  </td>
+                <td>
+                    <!-- Then, iterate over each student in the enrolledStudents List and display their info (Again kind of bad performance but too bad...) -->
+                    <!-- Also comes with a fancy Drop button.-->
+                    @foreach (Tran_991515427_LABS.Models.StudentResponse student in course.EnrolledStudents)
+                    {
+                        <span> Student Number: @student.StudentNumber : @student.FirstName @student.LastName <a asp-action="DropStudent" asp-route-studentNumber=@student.StudentNumber asp-route-dropCourseCode=@course.CourseCode>Drop Student</a><br /> </span>
+                    }
+                </td>
+            </tr>                
+            }
 
-    @if (Model.)
-    {
-        @:It is great that you are coming, for more information on the party stay tuned!
-    }
-    else
-    {
-        @:Sorry to know that you can't make to the party, we will miss you.
-    }
+        </tbody>
+    </table>
 
-    <a asp-action="ListResponses" class="nav-link">Click Here to see who is coming. </a>
-
+    <a asp-action="Welcome">Return Home</a>
 </body>
 </html>
